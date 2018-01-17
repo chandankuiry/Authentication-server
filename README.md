@@ -10,4 +10,5 @@ If you would like to download the code and try it for yourself:
 3. Change out the database configuration in config/database.js
 5. Launch: `npm start`
 6. Visit in your browser at: `http://localhost:8080`
+7. checking eslint error: `npm run lint`
 
