@@ -96,7 +96,7 @@ CMD [ "npm", "start" ]
 
 # Docker command to run the project
 
-##to build the image from Dockerfile.We have to give the path where Dockerfile is located
+## to build the image from Dockerfile.We have to give the path where Dockerfile is located
 
 ```
 sudo docker build -t authserver:latest /home/chandan/Desktop/Authentication-server
