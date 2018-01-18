@@ -45,6 +45,31 @@ all the routes are present in app/routes.js
 here I did not use image which will be in url format.I used raw image by uploading image.
 but I have written the code for url format also  in [routes.js](https://github.com/chandankuiry/Authentication-server/blob/master/app/routes.js) folder line no 9.
 
+```js
+const imgURL = "https://ichef.bbci.co.uk/news/660/cpsprodpb/37B5/production/_89716241_thinkstockphotos-523060154.jpg";
+    var Jimp = require("jimp")
+    app.get('/',function(req, res){
+      Jimp.read(imgURL, function(err,img){
+        if (err) throw err;
+        img.resize(32, 32).getBase64( Jimp.AUTO , function(e,img64){
+            if(e)throw e
+            res.send('<img src="'+img64+'">')
+        });
+          console.log('image',img64)
+          const base64Image = img64.split(';base64,').pop();
+          fs.writeFile('uploads/thumbs/image.png', base64Image, {encoding: 'base64'}, function(err) {
+            if(err){
+              throw err
+            }
+            else{
+              console.log('file created');
+            }
+          });
+      });
+    });
+
+```
+
 
 # Docker build process 
 
