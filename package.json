@@ -5,6 +5,7 @@
     "codacy-coverage": "codacy-coverage",
     "cover": "istanbul cover --report lcovonly ./node_modules/.bin/_mocha -- -r test/support/env test",
     "lint": "eslint server.js app/models config app/routes.js",
+    "lint-fix":"eslint --fix --ext .js app/ config/ tests/ server.js ",
     "nsp": "nsp check",
     "start": "node server.js",
     "test": "mocha -bc --check-leaks -R tap -r test/support/env test",
