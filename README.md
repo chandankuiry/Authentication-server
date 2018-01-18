@@ -75,4 +75,21 @@ const imgURL = "https://ichef.bbci.co.uk/news/660/cpsprodpb/37B5/production/_897
 
 I have written [Dockerfile](https://github.com/chandankuiry/Authentication-server/blob/master/Dockerfile) for this project .
 
+```
+#download node 
+FROM node:slim
+MAINTAINER Chandan kuiry
+
+# Create app directory
+WORKDIR /usr/src/auth-server
+# copy the package,json file
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 8080
+CMD [ "npm", "start" ]
+```
  
