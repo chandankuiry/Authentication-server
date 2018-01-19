@@ -2,8 +2,6 @@
   "name": "Authentication-server",
   "main": "server.js",
   "scripts": {
-    "codacy-coverage": "codacy-coverage",
-    "cover": "istanbul cover --report lcovonly ./node_modules/.bin/_mocha -- -r test/testcase.js",
     "lint": "eslint server.js app/models config/ test/ app/routes.js",
     "lint-fix": "eslint --fix --ext .js app/ config/ test/ server.js ",
     "nsp": "nsp check",
