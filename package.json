@@ -3,18 +3,18 @@
   "main": "server.js",
   "scripts": {
     "codacy-coverage": "codacy-coverage",
-    "cover": "istanbul cover --report lcovonly ./node_modules/.bin/_mocha -- -r test/support/env test",
-    "lint": "eslint server.js app/models config app/routes.js",
-    "lint-fix":"eslint --fix --ext .js app/ config/ tests/ server.js ",
+    "cover": "istanbul cover --report lcovonly ./node_modules/.bin/_mocha -- -r test/testcase.js",
+    "lint": "eslint server.js app/models config/ test/ app/routes.js",
+    "lint-fix": "eslint --fix --ext .js app/ config/ test/ server.js ",
     "nsp": "nsp check",
     "start": "node server.js",
-    "test": "mocha -bc --check-leaks -R tap -r test/support/env test",
-    "test:watch": "mocha -wbc --check-leaks -R progress -r test/support/env test"
+    "test": "./node_modules/.bin/_mocha test/test.js"
   },
   "dependencies": {
     "@starefossen/node-http-error": "^1.0.1",
     "bcrypt-nodejs": "latest",
     "body-parser": "~1.15.2",
+    "chai": "^4.1.2",
     "compression": "^1.6.2",
     "connect-flash": "~0.1.1",
     "connect-multiparty": "^2.1.0",
@@ -33,7 +33,9 @@
     "passport": "~0.3.2",
     "passport-local": "~1.0.0",
     "raven": "^0.11.0",
-    "response-time": "^2.3.0"
+    "response-time": "^2.3.0",
+    "should": "^13.2.1",
+    "winston": "^2.4.0"
   },
   "devDependencies": {
     "codacy-coverage": "^1.1.3",
